@@ -22,10 +22,8 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <% if current_user %>
           <ul class="nav navbar-nav">
-            <li> <%= link_to "Galería", names_path %></li>
-            <li> <%= link_to "Mis Proyectos", user_proyects_path %></li>
-            <!-- <li> <%= link_to "Crear Lista", new_list_path %></li> -->
-            <!-- <li> <%= link_to "Mis Listas", lists_path %></li> -->
+            <!-- <li>Mis sitios</li> -->
+            <!-- <li>Galería</li> -->
           </ul>
 
           <ul class="nav navbar-nav pull-right">
@@ -34,11 +32,10 @@
           </ul>
         <% else %>
           <ul class="nav navbar-nav">
-            <li> <%= link_to "Galería", names_path %></li>
+            <!-- link to sites path, galeria -->
           </ul>
           <ul class="nav navbar-nav pull-right">
-            <!-- <li><%= link_to 'Facebook Login', '/auth/facebook' %></li> -->
-            <li><%= link_to 'Google+ Login', '/auth/google' %></li>
+            <li><%= link_to 'Registrarse', '/auth/google' %></li>
           </ul>
         <% end %>
 

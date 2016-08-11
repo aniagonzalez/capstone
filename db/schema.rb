@@ -11,7 +11,70 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810205139) do
+ActiveRecord::Schema.define(version: 20160811205026) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "gallery_pictures", force: :cascade do |t|
+    t.string   "image_thumb"
+    t.string   "image_large"
+    t.string   "image_alt"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "sites", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "url"
+    t.string   "logo",             default: "svg/min/logo.svg"
+    t.string   "hero_img",         default: "hero.jpg"
+    t.string   "hero_title"
+    t.string   "hero_description"
+    t.string   "api_token"
+    t.string   "phone"
+    t.string   "emergency"
+    t.string   "email"
+    t.string   "address"
+    t.string   "monfri_hours"
+    t.string   "sat_hours"
+    t.string   "sun_hours"
+    t.string   "testimonials_img", default: "parallax.jpg"
+    t.string   "facebook",         default: "http://facebook.com"
+    t.string   "twitter",          default: "http://twitter.com"
+    t.string   "instagram",        default: "http://instagram.com"
+    t.string   "youtube",          default: "http://youtube.com"
+    t.string   "skype"
+    t.string   "pie",              default: "© 2016 - Todos los derechos reservados"
+    t.datetime "created_at",                                                          null: false
+    t.datetime "updated_at",                                                          null: false
+  end
+
+  create_table "team_members", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "testimonials", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "title"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "treatments", force: :cascade do |t|
+    t.string   "icon"
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username"

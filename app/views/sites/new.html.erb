@@ -1,0 +1,12 @@
+<h2>Crea un nuevo sitio aquí:</h2>
+
+<section class = "form-container">
+  <%= form_for @site do |f| %>
+  <p><%= f.label :Título %>
+  <%= f.text_field :title %></p>
+  <p><%= f.label :Descripción %>
+  <%= f.text_field :description %></p>
+
+  <%= f.submit %>
+  <% end %>
+</section>

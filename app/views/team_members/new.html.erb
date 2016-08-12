@@ -1,0 +1,15 @@
+<h2>Agrega a un nuevo miembro de tu equipo aquí:</h2>
+
+<section class = "form-container">
+  <%= form_for ([@site, @team_member]) do |f| %>
+  <p><%= f.label :Nombre %>
+  <%= f.text_field :name %></p>
+  <p><%= f.label :Foto %>
+  <%= f.text_field :image %></p>
+  <p><%= f.label :"Correo electrónico" %>
+  <%= f.text_field :email %></p>
+  <p><%= f.label :Teléfono %>
+  <%= f.text_field :phone %></p>
+  <%= f.submit %>
+  <% end %>
+</section>

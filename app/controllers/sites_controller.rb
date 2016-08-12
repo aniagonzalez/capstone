@@ -27,7 +27,7 @@ class SitesController < ApplicationController
 
   def update
     @site = current_user.sites.find(params[:id])
-    @site.update(site_update_params)
+    @site.update(site_update_params[:site])
     redirect_to root_path
   end
 #######

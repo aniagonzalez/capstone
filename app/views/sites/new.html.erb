@@ -10,3 +10,36 @@
   <%= f.submit %>
   <% end %>
 </section>
+
+<%if @site.id %>
+
+<!-- MOVE THIS TO PARTIAL -->
+  También puedes:
+  <ul>
+    <%=link_to "VER EQUIPO", site_team_members_path(@site.id)%>
+    <li><%=link_to "Agregar miembros del equipo", new_site_team_member_path(@site.id)%></li>
+    <li>Agregar tratamientos</li>
+    <li>Agregar fotos a la galería</li>
+  </ul>
+<% end %>
+
+<!-- t.string   "url"
+t.string   "logo",             default: "svg/min/logo.svg"
+t.string   "hero_img",         default: "hero.jpg"
+t.string   "hero_title"
+t.string   "hero_description"
+t.string   "api_token"
+t.string   "phone"
+t.string   "emergency"
+t.string   "email"
+t.string   "address"
+t.string   "monfri_hours"
+t.string   "sat_hours"
+t.string   "sun_hours"
+t.string   "testimonials_img", default: "parallax.jpg"
+t.string   "facebook",         default: "http://facebook.com"
+t.string   "twitter",          default: "http://twitter.com"
+t.string   "instagram",        default: "http://instagram.com"
+t.string   "youtube",          default: "http://youtube.com"
+t.string   "skype"
+t.string   "pie" -->

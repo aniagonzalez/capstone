@@ -1,0 +1,10 @@
+<% if current_user %>
+<!-- SOLO EL USUARIO REGISTRADO PUEDE VERLO? -->
+  <h2>Miembros de mi equipo:</h2>
+
+  <ul>
+  <% @team_members.each do |team_member| %>
+    <li><%=team_member.name%></li>
+  <% end %>
+  </ul>
+<% end %>

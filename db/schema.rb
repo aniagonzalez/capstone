@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811205026) do
+ActiveRecord::Schema.define(version: 20160811222047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(version: 20160811205026) do
     t.string   "image_alt"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "site_id"
   end
+
+  add_index "gallery_pictures", ["site_id"], name: "index_gallery_pictures_on_site_id", using: :btree
 
   create_table "sites", force: :cascade do |t|
     t.string   "title"
@@ -49,7 +52,10 @@ ActiveRecord::Schema.define(version: 20160811205026) do
     t.string   "pie",              default: "© 2016 - Todos los derechos reservados"
     t.datetime "created_at",                                                          null: false
     t.datetime "updated_at",                                                          null: false
+    t.integer  "user_id"
   end
+
+  add_index "sites", ["user_id"], name: "index_sites_on_user_id", using: :btree
 
   create_table "team_members", force: :cascade do |t|
     t.string   "name"
@@ -58,7 +64,10 @@ ActiveRecord::Schema.define(version: 20160811205026) do
     t.string   "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "site_id"
   end
+
+  add_index "team_members", ["site_id"], name: "index_team_members_on_site_id", using: :btree
 
   create_table "testimonials", force: :cascade do |t|
     t.string   "name"
@@ -66,7 +75,10 @@ ActiveRecord::Schema.define(version: 20160811205026) do
     t.string   "title"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "site_id"
   end
+
+  add_index "testimonials", ["site_id"], name: "index_testimonials_on_site_id", using: :btree
 
   create_table "treatments", force: :cascade do |t|
     t.string   "icon"
@@ -74,7 +86,10 @@ ActiveRecord::Schema.define(version: 20160811205026) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "site_id"
   end
+
+  add_index "treatments", ["site_id"], name: "index_treatments_on_site_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"

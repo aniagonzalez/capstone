@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-
+  has_many :sites
+  
   def self.find_or_create_from_omniauth(auth_hash)
     # Find or create a user
     #user = User.where(uid: auth_hash["uid"]).where(provider: auth_hash["provider"]).first

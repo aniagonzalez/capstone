@@ -1,34 +1,14 @@
-<h2>Crea un nuevo sitio aquí:</h2>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h2>Crea un nuevo sitio aquí:</h2>
 
-<section class = "form-container">
-  <%= form_for @site do |f| %>
-  <p><%= f.label :Título %>
-  <%= f.text_field :title %></p>
-  <p><%= f.label :Descripción %>
-  <%= f.text_field :description %></p>
+  <section class = "form-container">
+    <%= form_for @site do |f| %>
+    <p><%= f.label :Título %>
+    <%= f.text_field :title %></p>
+    <p><%= f.label :Descripción %>
+    <%= f.text_field :description %></p>
 
-  <%= f.submit %>
-  <% end %>
-</section>
-
-
-<!-- t.string   "url"
-t.string   "logo",             default: "svg/min/logo.svg"
-t.string   "hero_img",         default: "hero.jpg"
-t.string   "hero_title"
-t.string   "hero_description"
-t.string   "api_token"
-t.string   "phone"
-t.string   "emergency"
-t.string   "email"
-t.string   "address"
-t.string   "monfri_hours"
-t.string   "sat_hours"
-t.string   "sun_hours"
-t.string   "testimonials_img", default: "parallax.jpg"
-t.string   "facebook",         default: "http://facebook.com"
-t.string   "twitter",          default: "http://twitter.com"
-t.string   "instagram",        default: "http://instagram.com"
-t.string   "youtube",          default: "http://youtube.com"
-t.string   "skype"
-t.string   "pie" -->
+    <%= f.submit %>
+    <% end %>
+  </section>
+</div>

@@ -1,16 +1,18 @@
-<% if current_user %>
-  <%= render "shared/submenu"%>
-  <h3>Mis Tratamientos:</h3>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <% if current_user %>
+    <%= render "shared/submenu"%>
+    <h3>Mis Tratamientos:</h3>
 
-<table>
-  <% @treatments.each do |treatment| %>
-  <tr>
-    <td><%=treatment.title%></td>
-    <td><%=link_to "Editar", edit_site_treatment_path(id: treatment.id)%></td>
-    <td><%= link_to "Eliminar", site_treatment_path(id: treatment.id), method: :delete%></td>
-  </tr>
+  <table>
+    <% @treatments.each do |treatment| %>
+    <tr>
+      <td><%=treatment.title%></td>
+      <td><%=link_to "Editar", edit_site_treatment_path(id: treatment.id)%></td>
+      <td><%= link_to "Eliminar", site_treatment_path(id: treatment.id), method: :delete%></td>
+    </tr>
+    <% end %>
+  </table>
+
+    <%=link_to "Agregar nuevo tratamiento", new_site_treatment_path(@site.id)%>
   <% end %>
-</table>
-
-  <%=link_to "Agregar nuevo tratamiento", new_site_treatment_path(@site.id)%>
-<% end %>
+</div>

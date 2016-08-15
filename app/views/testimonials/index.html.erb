@@ -1,16 +1,18 @@
-<% if current_user %>
-  <%= render "shared/submenu"%>
-  <h3>Mis comentarios:</h3>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <% if current_user %>
+    <%= render "shared/submenu"%>
+    <h3>Mis comentarios:</h3>
 
-<table>
-  <% @testimonials.each do |testimonial| %>
-  <tr>
-    <td><%=testimonial.name%></td>
-    <td><%=link_to "Editar", edit_site_testimonial_path(id: testimonial.id)%></td>
-    <td><%= link_to "Eliminar", site_testimonial_path(id: testimonial.id), method: :delete%></td>
-  </tr>
+  <table>
+    <% @testimonials.each do |testimonial| %>
+    <tr>
+      <td><%=testimonial.name%></td>
+      <td><%=link_to "Editar", edit_site_testimonial_path(id: testimonial.id)%></td>
+      <td><%= link_to "Eliminar", site_testimonial_path(id: testimonial.id), method: :delete%></td>
+    </tr>
+    <% end %>
+  </table>
+
+    <%=link_to "Agregar nuevo comentario", new_site_testimonial_path(@site.id)%>
   <% end %>
-</table>
-
-  <%=link_to "Agregar nuevo comentario", new_site_testimonial_path(@site.id)%>
-<% end %>
+</div>

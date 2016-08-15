@@ -1,48 +1,51 @@
-<%= render "shared/submenu"%>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <%= render "shared/submenu"%>
 
-<h3>Proporciona más información sobre tu sitio aquí:</h3>
+  <h3>Proporciona más información sobre tu sitio aquí:</h3>
 
-<section class = "form-container">
-  <%= form_for @site do |f| %>
-  <p><%= f.label :Título %>
-  <%= f.text_field :title %></p>
-  <p><%= f.label :Descripción %>
-  <%= f.text_field :description %></p>
-  <p><%= f.label :"Imagen principal"%>
-  <%= f.text_field :hero_img %></p>
-  <p><%= f.label :"Título principal" %>
-  <%= f.text_field :hero_title %></p>
-  <p><%= f.label :"Subtítulo principal" %>
-  <%= f.text_field :hero_description %></p>
-  <p><%= f.label :Teléfono %>
-  <%= f.text_field :phone %></p>
-  <p><%= f.label :"Teléfono emergencias" %>
-  <%= f.text_field :emergency %></p>
-  <p><%= f.label :"Correo email" %>
-  <%= f.text_field :email %></p>
-  <p><%= f.label :Dirección %>
-  <%= f.text_field :address %></p>
-  <p><%= f.label :"Horario de Lunes a Viernes" %>
-  <%= f.text_field :monfri_hours %></p>
-  <p><%= f.label :"Horario en Sábado" %>
-  <%= f.text_field :sat_hours %></p>
-  <p><%= f.label :"Horario en Domingo" %>
-  <%= f.text_field :sun_hours %></p>
-  <p><%= f.label :"Imagen para testimonios" %>
-  <%= f.text_field :testimonials_img %></p>
-  <p><%= f.label :"Dirección Facebook" %>
-  <%= f.text_field :facebook %></p>
-  <p><%= f.label :"Dirección Twitter" %>
-  <%= f.text_field :twitter %></p>
-  <p><%= f.label :"Dirección instagram" %>
-  <%= f.text_field :instagram %></p>
-  <p><%= f.label :"Dirección Youtube" %>
-  <%= f.text_field :youtube %></p>
-  <p><%= f.label :"Dirección Skype" %>
-  <%= f.text_field :skype %></p>
-  <p><%= f.label :"Pie de página" %>
-  <%= f.text_field :pie %></p>
+  <section class = "form-container">
+    <%= form_for @site do |f| %>
+    <p><%= f.label :Título %>
+    <%= f.text_field :title %></p>
+    <p><%= f.label :Descripción %>
+    <%= f.text_field :description %></p>
+    <p><%= f.label :"Imagen principal"%>
+    <%= f.text_field :hero_img %></p>
+    <p><%= f.label :"Título principal" %>
+    <%= f.text_field :hero_title %></p>
+    <p><%= f.label :"Subtítulo principal" %>
+    <%= f.text_field :hero_description %></p>
+    <p><%= f.label :Teléfono %>
+    <%= f.text_field :phone %></p>
+    <p><%= f.label :"Teléfono emergencias" %>
+    <%= f.text_field :emergency %></p>
+    <p><%= f.label :"Correo email" %>
+    <%= f.text_field :email %></p>
+    <p><%= f.label :Dirección %>
+    <%= f.text_field :address %></p>
+    <p><%= f.label :"Horario de Lunes a Viernes" %>
+    <%= f.text_field :monfri_hours %></p>
+    <p><%= f.label :"Horario en Sábado" %>
+    <%= f.text_field :sat_hours %></p>
+    <p><%= f.label :"Horario en Domingo" %>
+    <%= f.text_field :sun_hours %></p>
+    <p><%= f.label :"Imagen para testimonios" %>
+    <%= f.text_field :testimonials_img %></p>
+    <p><%= f.label :"Dirección Facebook" %>
+    <%= f.text_field :facebook %></p>
+    <p><%= f.label :"Dirección Twitter" %>
+    <%= f.text_field :twitter %></p>
+    <p><%= f.label :"Dirección instagram" %>
+    <%= f.text_field :instagram %></p>
+    <p><%= f.label :"Dirección Youtube" %>
+    <%= f.text_field :youtube %></p>
+    <p><%= f.label :"Dirección Skype" %>
+    <%= f.text_field :skype %></p>
+    <p><%= f.label :"Pie de página" %>
+    <%= f.text_field :pie %></p>
 
-  <%= f.submit %>
-  <% end %>
-</section>
+    <%= f.submit %>
+    <% end %>
+  </section>
+
+</div>

@@ -1,15 +1,17 @@
-<%= render "shared/submenu"%>
-<h2>Agrega un nuevo tratamiento de tu clínica aquí:</h2>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <%= render "shared/submenu"%>
+  <h2>Agrega un nuevo tratamiento de tu clínica aquí:</h2>
 
-<section class = "form-container">
-  <%= form_for ([@site, @treatment]) do |f| %>
-  <p><%= f.label :Título %>
-  <%= f.text_field :title %></p>
-  <p><%= f.label :Icono %>
-  <%= f.text_field :icon %></p>
-  <p><%= f.label :Descripción %>
-  <%= f.text_field :description %></p>
+  <section class = "form-container">
+    <%= form_for ([@site, @treatment]) do |f| %>
+    <p><%= f.label :Título %>
+    <%= f.text_field :title %></p>
+    <p><%= f.label :Icono %>
+    <%= f.text_field :icon %></p>
+    <p><%= f.label :Descripción %>
+    <%= f.text_field :description %></p>
 
-  <%= f.submit %>
-  <% end %>
-</section>
+    <%= f.submit %>
+    <% end %>
+  </section>
+</div>

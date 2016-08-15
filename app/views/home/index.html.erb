@@ -5,7 +5,9 @@
 
   <ul>
   <% @sites.each do |site| %>
-    <li><%=link_to site.title, edit_site_path(site.id)%> </li>
+    <li><%= site.title%> - <%=link_to "Editar", add_info_path(site.id)%> </li>
   <% end %>
   </ul>
+
+  <%= link_to "Crear un nuevo sitio", new_site_path %>
 <% end %>

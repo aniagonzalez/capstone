@@ -11,17 +11,6 @@
   <% end %>
 </section>
 
-<%if @site.id %>
-
-<!-- MOVE THIS TO PARTIAL -->
-  También puedes:
-  <ul>
-    <%=link_to "VER EQUIPO", site_team_members_path(@site.id)%>
-    <li><%=link_to "Agregar miembros del equipo", new_site_team_member_path(@site.id)%></li>
-    <li>Agregar tratamientos</li>
-    <li>Agregar fotos a la galería</li>
-  </ul>
-<% end %>
 
 <!-- t.string   "url"
 t.string   "logo",             default: "svg/min/logo.svg"

@@ -1,0 +1,9 @@
+<%if @site.id %>
+  Submenu
+  <ul>
+    <li><%= link_to "EDITAR INFORMACION", add_info_path(@site.id)%></li>
+    <li><%=link_to "VER EQUIPO", site_team_members_path(@site.id)%></li>
+    <li>VER TRATAMIENTOS</li>
+    <li>VER GALERIA</li>
+  </ul>
+<% end %>

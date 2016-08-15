@@ -1,0 +1,15 @@
+<%= render "shared/submenu"%>
+<h2>Agrega un nuevo tratamiento de tu clínica aquí:</h2>
+
+<section class = "form-container">
+  <%= form_for ([@site, @treatment]) do |f| %>
+  <p><%= f.label :Título %>
+  <%= f.text_field :title %></p>
+  <p><%= f.label :Icono %>
+  <%= f.text_field :icon %></p>
+  <p><%= f.label :Descripción %>
+  <%= f.text_field :description %></p>
+
+  <%= f.submit %>
+  <% end %>
+</section>

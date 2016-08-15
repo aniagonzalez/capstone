@@ -1,5 +1,4 @@
 <% if current_user %>
-<h2><%= @site.title%></h2>
   <%= render "shared/submenu"%>
   <h3>Miembros de mi equipo:</h3>
 
@@ -8,7 +7,7 @@
   <tr>
     <td><%=team_member.name%></td>
     <td><%=link_to "Editar", edit_site_team_member_path(id: team_member.id)%></td>
-    <td>Eliminar</td>
+    <td><%= link_to "Eliminar", site_team_member_path(id: team_member.id), method: :delete%></td>
   </tr>
   <% end %>
 </table>

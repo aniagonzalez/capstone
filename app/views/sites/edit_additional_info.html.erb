@@ -1,7 +1,7 @@
-<h2><%= @site.title %>
+<%= render "shared/submenu"%>
+
 <h3>Proporciona más información sobre tu sitio aquí:</h3>
 
-<%= render "shared/submenu"%>
 <section class = "form-container">
   <%= form_for @site do |f| %>
   <p><%= f.label :Título %>

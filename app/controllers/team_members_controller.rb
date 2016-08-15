@@ -34,6 +34,13 @@ class TeamMembersController < ApplicationController
     redirect_to site_team_members_path
   end
 
+  def destroy
+    @team_member = TeamMember.find(params[:id])
+    # @site = Site.find(params[:site_id])
+    @team_member.destroy
+    redirect_to site_team_members_path
+  end
+
   private
   def create_team_member_params
       params.permit(team_member: [:name, :image, :email, :phone])

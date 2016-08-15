@@ -40,6 +40,12 @@ class SitesController < ApplicationController
     @site.update(site_additional_params[:site])
     redirect_to root_path
   end
+
+  def destroy
+    @site = current_user.sites.find(params[:id])
+    @site.destroy
+    redirect_to root_path
+  end
 #######
 
   private

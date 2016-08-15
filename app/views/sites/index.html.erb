@@ -1,9 +1,0 @@
-<% if current_user %>
-  <h2>Mis sitios:</h2>
-
-  <ul>
-  <% @sites.each do |site| %>
-    <li><%=link_to site.title, add_info_path(site.id)%> </li>
-  <% end %>
-  </ul>
-<% end %>

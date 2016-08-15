@@ -1,12 +1,19 @@
-¡Tener un sitio web es esencial para el éxito de tu práctica!
+
+
 <% if current_user %>
   <h2>Mis sitios:</h2>
 
-  <ul>
-  <% @sites.each do |site| %>
-    <li><%= site.title%> - <%=link_to "Editar", add_info_path(site.id)%> </li>
-  <% end %>
-  </ul>
+  <table>
+    <% @sites.each do |site| %>
+    <tr>
+      <td><%=link_to site.title, add_info_path(site.id)%></td>
+      <td><%= link_to "Eliminar", site_path(site.id), method: :delete, data: {confirm: "¿Estás seguro que deseas eliminar el sitio?"}%></td>
+    </tr>
+    <% end %>
+  </table>
 
-  <%= link_to "Crear un nuevo sitio", new_site_path %>
+  <%= link_to "Crear un nuevo sitio", new_site_path%>
+<%else%>
+  ¡Tener un sitio web es esencial para el éxito de tu práctica!
+  <%= link_to 'Regístrate aquí', '/auth/google' %> para crear un nuevo sitio.
 <% end %>

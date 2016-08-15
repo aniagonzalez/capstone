@@ -5,6 +5,7 @@
     <li><%= link_to "EDITAR INFORMACION", add_info_path(@site.id)%></li>
     <li><%=link_to "VER EQUIPO", site_team_members_path(@site.id)%></li>
     <li><%=link_to "VER TRATAMIENTOS", site_treatments_path(@site.id)%></li>
-    <li>VER GALERIA</li>
+    <li><%=link_to "VER COMENTARIOS", site_testimonials_path(@site.id)%></li>
+    <li><%=link_to "VER GALERIA", site_gallery_pictures_path(@site.id)%></li>
   </ul>
 <% end %>

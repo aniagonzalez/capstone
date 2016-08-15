@@ -1,0 +1,15 @@
+<%= render "shared/submenu"%>
+<h2>Agrega un nuevo comentario sobre tu clínica aquí:</h2>
+
+<section class = "form-container">
+  <%= form_for ([@site, @testimonial]) do |f| %>
+  <p><%= f.label :Nombre %>
+  <%= f.text_field :name %></p>
+  <p><%= f.label :Título %>
+    <%= f.text_field :title %></p>
+  <p><%= f.label :Comentario %>
+  <%= f.text_field :description %></p>
+
+  <%= f.submit %>
+  <% end %>
+</section>

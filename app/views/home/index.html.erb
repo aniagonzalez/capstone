@@ -2,7 +2,7 @@
 
 <% if current_user %>
 
-  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <div class="col-sm-12 col-md-12 main">
     <h1 class="page-header">Mis sitios:</h1>
 
     <div class="row placeholders">
@@ -17,9 +17,10 @@
       <% end %>
 
     </div>
-  </div>
-
-  <%= link_to "Crear un nuevo sitio", new_site_path%>
+    <div class="text-center">
+      <%= link_to "Crear un nuevo sitio", new_site_path, class:"btn btn-primary btn-lg active", role:"button"%>
+    </div>
+</div>
 <%else%>
   ¡Tener un sitio web es esencial para el éxito de tu práctica!
   <%= link_to 'Regístrate aquí', '/auth/google' %> para crear un nuevo sitio.

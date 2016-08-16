@@ -1,51 +1,46 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
   <%= render "shared/submenu"%>
 
-  <h3>Proporciona más información sobre tu sitio aquí:</h3>
-
-  <section class = "form-container">
-    <%= form_for @site do |f| %>
-    <p><%= f.label :Título %>
-    <%= f.text_field :title %></p>
-    <p><%= f.label :Descripción %>
-    <%= f.text_field :description %></p>
-    <p><%= f.label :"Imagen principal"%>
-    <%= f.text_field :hero_img %></p>
-    <p><%= f.label :"Título principal" %>
-    <%= f.text_field :hero_title %></p>
-    <p><%= f.label :"Subtítulo principal" %>
-    <%= f.text_field :hero_description %></p>
-    <p><%= f.label :Teléfono %>
-    <%= f.text_field :phone %></p>
-    <p><%= f.label :"Teléfono emergencias" %>
-    <%= f.text_field :emergency %></p>
-    <p><%= f.label :"Correo email" %>
-    <%= f.text_field :email %></p>
-    <p><%= f.label :Dirección %>
-    <%= f.text_field :address %></p>
-    <p><%= f.label :"Horario de Lunes a Viernes" %>
-    <%= f.text_field :monfri_hours %></p>
-    <p><%= f.label :"Horario en Sábado" %>
-    <%= f.text_field :sat_hours %></p>
-    <p><%= f.label :"Horario en Domingo" %>
-    <%= f.text_field :sun_hours %></p>
-    <p><%= f.label :"Imagen para testimonios" %>
-    <%= f.text_field :testimonials_img %></p>
-    <p><%= f.label :"Dirección Facebook" %>
-    <%= f.text_field :facebook %></p>
-    <p><%= f.label :"Dirección Twitter" %>
-    <%= f.text_field :twitter %></p>
-    <p><%= f.label :"Dirección instagram" %>
-    <%= f.text_field :instagram %></p>
-    <p><%= f.label :"Dirección Youtube" %>
-    <%= f.text_field :youtube %></p>
-    <p><%= f.label :"Dirección Skype" %>
-    <%= f.text_field :skype %></p>
-    <p><%= f.label :"Pie de página" %>
-    <%= f.text_field :pie %></p>
-
-    <%= f.submit %>
+  <h2 class="sub-header">Información General</h2>
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <%= flash[:notice] %>
+      </div>
     <% end %>
-  </section>
+    <%= bootstrap_form_for(@site, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-8") do |f| %>
+      <h4 align="center"> General </h4>
+      <%= f.text_field :title, label: "Título" %></p>
+      <%= f.text_area :description, label: "Descripción" %></p>
+      <hr class="separator">
+      <h4 align="center"> Sección Principal </h4>
+      <%= f.text_field :hero_img, label: "Imagen principal" %></p>
+      <%= f.text_field :hero_title, label: "Título principal" %></p>
+      <%= f.text_field :hero_description, label: "Subtítulo principal" %></p>
+      <hr class="separator">
+      <h4 align="center"> Datos de Contacto </h4>
+      <%= f.text_field :phone, control_col: "col-sm-3", label: "Teléfono" %></p>
+      <%= f.text_field :emergency, control_col: "col-sm-3", label: "Teléfono emergencias" %></p>
+      <%= f.text_field :email, control_col: "col-sm-3", label: "Correo email" %></p>
+      <%= f.text_field :address, label: "Dirección" %></p>
+      <hr class="separator">
+      <h4 align="center"> Horarios de Apertura </h4>
+      <%= f.text_field :monfri_hours, label: "Horario de Lunes a Viernes" %></p>
+      <%= f.text_field :sat_hours, label: "Horario en Sábado" %></p>
+      <%= f.text_field :sun_hours, label: "Horario en Domingo" %></p>
+      <hr class="separator">
+      <h4 align="center"> Otros </h4>
+      <%= f.text_field :testimonials_img, label: "Imagen para testimonios" %></p>
+      <%= f.text_field :pie, label: "Pie de página" %></p>
+      <hr class="separator">
+      <h4 align="center"> Dirección en Medios Sociales </h4>
+      <%= f.text_field :facebook, label: "Dirección Facebook" %></p>
+      <%= f.text_field :twitter, label: "Dirección Twitter" %></p>
+      <%= f.text_field :instagram, label: "Dirección instagram" %></p>
+      <%= f.text_field :youtube, label: "Dirección Youtube" %></p>
+      <%= f.text_field :skype, label: "Dirección Skype" %></p>
+
+      <%= f.submit "Guardar cambios"%>
+    <% end %>
 
 </div>

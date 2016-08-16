@@ -3,15 +3,12 @@
   <h2>Agrega un nuevo tratamiento de tu clínica aquí:</h2>
 
   <section class = "form-container">
-    <%= form_for ([@site, @treatment]) do |f| %>
-    <p><%= f.label :Título %>
-    <%= f.text_field :title %></p>
-    <p><%= f.label :Icono %>
-    <%= f.text_field :icon %></p>
-    <p><%= f.label :Descripción %>
-    <%= f.text_field :description %></p>
+    <%= bootstrap_form_for([@site, @treatment], layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-8") do |f| %>
+    <%= f.text_field :title, label: "Título"%>
+    <%= f.text_field :icon, label: "Ícono"%>
+    <%= f.text_field :description, label: "Descripción"%>
 
-    <%= f.submit %>
+    <%= f.submit "Guardar"%>
     <% end %>
   </section>
 </div>

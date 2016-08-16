@@ -38,7 +38,8 @@ class SitesController < ApplicationController
   def update_additional_info
     @site = current_user.sites.find(params[:id])
     @site.update(site_additional_params[:site])
-    redirect_to root_path
+    flash.notice = "Los cambios se guardaron exitosamente."
+    redirect_to add_info_path
   end
 
   def destroy

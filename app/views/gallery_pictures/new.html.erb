@@ -3,15 +3,12 @@
   <h2>Agrega una nueva imagen para tu galería aquí:</h2>
 
   <section class = "form-container">
-    <%= form_for ([@site, @gallery_picture]) do |f| %>
-    <p><%= f.label :"Imagen chica"  %>
-    <%= f.text_field :image_thumb %></p>
-    <p><%= f.label :"Imagen grande" %>
-    <%= f.text_field :image_large %></p>
-    <p><%= f.label :"Texto alternativo" %>
-    <%= f.text_field :image_alt %></p>
+    <%= bootstrap_form_for([@site, @gallery_picture], layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-8") do |f| %>
+    <%= f.text_field :image_thumb, label: "Imagen chica" %>
+    <%= f.text_field :image_large, label: "Imagen grande" %>
+    <%= f.text_field :image_alt, label: "Texto alternativo"%>
 
-    <%= f.submit %>
+    <%= f.submit "Guardar"%>
     <% end %>
   </section>
 </div>

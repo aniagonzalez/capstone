@@ -3,16 +3,12 @@
   <h2>Agrega a un nuevo miembro de tu equipo aquí:</h2>
 
   <section class = "form-container">
-    <%= form_for ([@site, @team_member]) do |f| %>
-    <p><%= f.label :Nombre %>
-    <%= f.text_field :name %></p>
-    <p><%= f.label :Foto %>
-    <%= f.text_field :image %></p>
-    <p><%= f.label :"Correo electrónico" %>
-    <%= f.text_field :email %></p>
-    <p><%= f.label :Teléfono %>
-    <%= f.text_field :phone %></p>
-    <%= f.submit %>
+    <%= bootstrap_form_for([@site, @team_member], layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-8") do |f| %>
+      <%= f.text_field :name, label: "Nombre" %>
+      <%= f.text_field :image, label: "Foto" %>
+      <%= f.text_field :email, label: "Correo Electrónico"%>
+      <%= f.text_field :phone, label: "Teléfono"%>
+      <%= f.submit "Guardar" %>
     <% end %>
   </section>
 </div>

@@ -1,18 +1,22 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
   <% if current_user %>
     <%= render "shared/submenu"%>
-    <h3>Miembros de mi equipo:</h3>
+    <h2 class="sub-header">Miembros del equipo</h2>
 
-  <table>
-    <% @team_members.each do |team_member| %>
-    <tr>
-      <td><%=team_member.name%></td>
-      <td><%=link_to "Editar", edit_site_team_member_path(id: team_member.id)%></td>
-      <td><%= link_to "Eliminar", site_team_member_path(id: team_member.id), method: :delete%></td>
-    </tr>
-    <% end %>
-  </table>
+    <%=link_to "Agregar miembro del equipo", new_site_team_member_path(@site.id), class:"btn btn-primary btn-sm active padded", role:"button"%>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <tbody>
+            <% @team_members.each do |team_member| %>
+            <tr>
+              <td><%=team_member.name%></td>
+              <td><%=link_to "Editar", edit_site_team_member_path(id: team_member.id)%></td>
+              <td><%= link_to "Eliminar", site_team_member_path(id: team_member.id), method: :delete%></td>
+            </tr>
+            <%end%>
+          </tbody>
+        </table>
+      </div>
 
-    <%=link_to "Agregar miembros del equipo", new_site_team_member_path(@site.id)%>
   <% end %>
 </div>

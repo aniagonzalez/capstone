@@ -30,6 +30,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "omniauth-google-oauth2"
 
+gem 'bootstrap_form'
+
 gem 'dotenv-rails'
 
 # Use ActiveModel has_secure_password

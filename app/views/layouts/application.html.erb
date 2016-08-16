@@ -10,6 +10,9 @@
     <link rel="icon" href="../../favicon.ico">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -20,7 +23,7 @@
 
   <!-- the main app navbar -->
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -35,10 +38,10 @@
 
           <% if current_user %>
             <ul class="nav navbar-nav">
-              <li>Mis sitios</li>
             </ul>
 
             <ul class="nav navbar-nav pull-right">
+              <li><%= link_to ('Hola ' + current_user.first_name + '!'), root_path%></li>
               <li><%= image_tag current_user.image, alt: current_user.first_name %></li>
               <li><%= link_to 'Salir', logout_path, method: :delete %></li>
             </ul>

@@ -1,13 +1,17 @@
 
 <!-- LEFT MENU -->
 <div class="col-sm-3 col-md-2 sidebar">
-  <h2><%= @site.title%></h2>
+  <div class="placeholder">
+    <%=link_to image_tag("data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", :width=>"100", :height=>"100", :class =>"img-responsive"), add_info_path(@site.id)%>
+    <h3><%= @site.title%></h3>
+  </div>
   <ul class="nav nav-sidebar">
-    <li class="active"><li><%= link_to "Información General", add_info_path(@site.id)%></li><span class="sr-only">(current)</span></a></li>
-    <li><%=link_to "Equipo", site_team_members_path(@site.id)%></li>
-    <li><%=link_to "Tratamientos", site_treatments_path(@site.id)%></li>
-    <li><%=link_to "Comentarios", site_testimonials_path(@site.id)%></li>
-    <li><%=link_to "Galería", site_gallery_pictures_path(@site.id)%></li>
+    <li class="<%= 'active' if params[:controller] == 'sites' %>"><%= link_to "Información General", add_info_path(@site.id)%></li><span class="sr-only">(current)</span></a></li>
+    <li class="<%= 'active' if params[:controller] == 'team_members' %>"><%=link_to "Equipo", site_team_members_path(@site.id)%></li>
+    <li class="<%= 'active' if params[:controller] == 'treatments' %>"><%=link_to "Tratamientos", site_treatments_path(@site.id)%></li>
+    <li class="<%= 'active' if params[:controller] == 'testimonials' %>"><%=link_to "Comentarios", site_testimonials_path(@site.id)%></li>
+    <li class="<%= 'active' if params[:controller] == 'gallery_pictures' %>"><%=link_to "Galería", site_gallery_pictures_path(@site.id)%></li>
+    <li><%=link_to "Vista Previa", root_path%></li>
   </ul>
 </div>
 <!-- END LEFT MENU -->

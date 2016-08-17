@@ -20,6 +20,30 @@ class TeamMembersController < ApplicationController
     else
       render :new
     end
+
+    # each time a member is created save them ALL as JSON?
+    # OR ONLY DO IT WHEN LAUNCH SITE?
+
+    @team_members = TeamMember.where(site_id: params[:site_id])
+    @team_members_json = []
+
+    @team_members.each do |team_member|
+      team_member_json = {
+      "name" => team_member.name,
+      "image" => team_member.image,
+      "email" => team_member.email,
+      "phone" => team_member.phone
+      }
+    @team_members_json << team_member_json
+    end
+
+    # File.open("public/#{current_user.id}/#{@site.id}/team_member.json","w") do |f|
+    File.open("public/#{current_user.id}-#{@site.id}-team_members.json","w") do |f|
+      f.write(@team_members_json.to_json)
+    end
+
+
+
   end
 
   def edit

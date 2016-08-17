@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811222047) do
+ActiveRecord::Schema.define(version: 20160817204644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20160811222047) do
   end
 
   add_index "gallery_pictures", ["site_id"], name: "index_gallery_pictures_on_site_id", using: :btree
+
+  create_table "json_data", force: :cascade do |t|
+    t.json     "gallery_json"
+    t.json     "info_json"
+    t.json     "team_json"
+    t.json     "testimonials_json"
+    t.json     "treatments_json"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "sites", force: :cascade do |t|
     t.string   "title"

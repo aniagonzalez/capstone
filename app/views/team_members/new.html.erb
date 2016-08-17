@@ -5,7 +5,7 @@
   <section class = "form-container">
     <%= bootstrap_form_for([@site, @team_member], layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-8") do |f| %>
       <%= f.text_field :name, label: "Nombre" %>
-      <%= f.text_field :image, label: "Foto" %>
+      <%= f.file_field :image, label: "Foto" %>
       <%= f.text_field :email, label: "Correo Electrónico"%>
       <%= f.text_field :phone, label: "Teléfono"%>
       <%= f.submit "Guardar" %>
